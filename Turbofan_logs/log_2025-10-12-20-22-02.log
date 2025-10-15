@@ -1,0 +1,14 @@
+[2025-10-12 20:22:02,820]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-12 20:22:02,820]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-12 20:26:08,718]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-12 20:26:08,718]^;INFO^;245^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-12 20:26:08,719]^;INFO^;317^;pipeline.py^;run_pipeline()^;Pipeline starting.
+[2025-10-12 20:26:08,719]^;INFO^;333^;pipeline.py^;run_pipeline()^;Pipeline experiment: Experiment(experiment_id='e5439550-a509-453a-84cb-0b7f1a06b3fb', initialization_timestamp='2025-10-12-20-26-08', artifact_time_stamp='2025-10-12-20-26-08', running_status=True, start_time=datetime.datetime(2025, 10, 12, 20, 26, 8, 719367), stop_time=None, execution_time=None, message='Pipeline has been started.', experiment_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\experiment\\experiment.csv', accuracy=None, is_model_accepted=None)
+[2025-10-12 20:26:08,725]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/SenthilmuruganBhaskaran-ship-it/NASA-Turbofan-Project/refs/heads/main/Processed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/SenthilmuruganBhaskaran-ship-it/NASA-Turbofan-Project/refs/heads/main/Processed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-12-20-26-08\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-12-20-26-08\\ingested_data\\test')
+[2025-10-12 20:26:08,726]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-12 20:26:08,726]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-12 20:26:08,750]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 20:26:08] "GET /train HTTP/1.1" 200 -
+[2025-10-12 20:26:46,634]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-12 20:26:46,634]^;INFO^;245^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-12 20:26:46,643]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 20:26:46] "GET /train HTTP/1.1" 200 -

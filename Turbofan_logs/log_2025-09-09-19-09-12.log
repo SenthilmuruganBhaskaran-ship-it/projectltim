@@ -1,0 +1,237 @@
+[2025-09-09 19:09:13,473]^;INFO^;97^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-09-09 19:09:13,473]^;INFO^;97^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-09-09 19:11:02,025]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:11:02] "GET / HTTP/1.1" 200 -
+[2025-09-09 19:11:04,890]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:11:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-09-09 19:11:10,354]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:11:10] "GET /predict HTTP/1.1" 200 -
+[2025-09-09 19:13:16,687]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:13:16] "GET /saved_models HTTP/1.1" 200 -
+[2025-09-09 19:13:19,935]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:13:19] "GET /predict HTTP/1.1" 200 -
+[2025-09-09 19:18:05,180]^;ERROR^;838^;app.py^;log_exception()^;Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 107, in predict
+    RUL = model.predict(X)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\component\model_trainer.py", line 21, in predict
+    transform_features = self.preproccing_obj.transform(x)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\pipeline.py", line 903, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\preprocessing\_data.py", line 1045, in transform
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 608, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 535, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\app.py", line 147, in predict
+    RUL = Turbofan_predictor.predict(X=Turbofan_df)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 110, in predict
+    raise TurboException(e, sys) from e
+Turbofan.exception.TurboException: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+[2025-09-09 19:18:05,208]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:18:05] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-09-09 19:18:15,845]^;ERROR^;838^;app.py^;log_exception()^;Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 107, in predict
+    RUL = model.predict(X)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\component\model_trainer.py", line 21, in predict
+    transform_features = self.preproccing_obj.transform(x)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\pipeline.py", line 903, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\preprocessing\_data.py", line 1045, in transform
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 608, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 535, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\app.py", line 147, in predict
+    RUL = Turbofan_predictor.predict(X=Turbofan_df)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 110, in predict
+    raise TurboException(e, sys) from e
+Turbofan.exception.TurboException: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+[2025-09-09 19:18:15,850]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:18:15] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-09-09 19:18:21,561]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:18:21] "GET / HTTP/1.1" 200 -
+[2025-09-09 19:18:31,037]^;INFO^;207^;app.py^;render_log_dir()^;req_path: Turbofan_logs
+[2025-09-09 19:18:31,071]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:18:31] "GET /logs HTTP/1.1" 200 -
+[2025-09-09 19:18:34,986]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:18:34] "GET /predict HTTP/1.1" 200 -
+[2025-09-09 19:19:15,349]^;ERROR^;838^;app.py^;log_exception()^;Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 107, in predict
+    RUL = model.predict(X)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\component\model_trainer.py", line 21, in predict
+    transform_features = self.preproccing_obj.transform(x)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\pipeline.py", line 903, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\preprocessing\_data.py", line 1045, in transform
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 608, in _validate_data
+    self._check_feature_names(X, reset=reset)
+  File "C:\Users\senth\anaconda3\Lib\site-packages\sklearn\base.py", line 535, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\anaconda3\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\app.py", line 147, in predict
+    RUL = Turbofan_predictor.predict(X=Turbofan_df)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\senth\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 110, in predict
+    raise TurboException(e, sys) from e
+Turbofan.exception.TurboException: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+[2025-09-09 19:19:15,353]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Sep/2025 19:19:15] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

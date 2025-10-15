@@ -1,0 +1,75 @@
+[2025-10-09 14:31:08,409]^;INFO^;97^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-09 14:31:08,409]^;INFO^;97^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-09 14:31:24,762]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 14:31:24] "GET /predict HTTP/1.1" 200 -
+[2025-10-09 14:31:31,795]^;ERROR^;875^;app.py^;log_exception()^;Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 107, in predict
+    RUL = model.predict(X)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\component\model_trainer.py", line 21, in predict
+    transform_features = self.preproccing_obj.transform(x)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\pipeline.py", line 1093, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1075, in transform
+    X = validate_data(
+        self,
+    ...<6 lines>...
+        ensure_all_finite="allow-nan",
+    )
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\validation.py", line 2929, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\validation.py", line 2787, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 147, in predict
+    RUL = Turbofan_predictor.predict(X=Turbofan_df)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 110, in predict
+    raise TurboException(e, sys) from e
+Turbofan.exception.TurboException: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+[2025-10-09 14:31:31,836]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 14:31:31] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

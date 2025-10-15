@@ -1,0 +1,6 @@
+[2025-09-21 21:19:23,489]^;INFO^;97^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-09-21 21:19:23,489]^;INFO^;97^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-09-21 21:20:13,115]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [21/Sep/2025 21:20:13] "GET / HTTP/1.1" 200 -
+[2025-09-21 21:20:15,708]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [21/Sep/2025 21:20:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-09-21 21:20:19,639]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [21/Sep/2025 21:20:19] "GET /predict HTTP/1.1" 200 -

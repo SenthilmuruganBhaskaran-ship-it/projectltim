@@ -1,0 +1,8 @@
+[2025-10-13 11:56:45,871]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-13 11:56:45,871]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-13 11:56:57,776]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 11:56:57] "GET / HTTP/1.1" 200 -
+[2025-10-13 11:56:58,128]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 11:56:58] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -
+[2025-10-13 11:56:58,624]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 11:56:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-10-13 11:57:01,112]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 11:57:01] "GET /predict HTTP/1.1" 200 -
+[2025-10-13 11:57:06,021]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 11:57:06] "POST /predict HTTP/1.1" 200 -

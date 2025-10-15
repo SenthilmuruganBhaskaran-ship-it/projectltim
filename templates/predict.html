@@ -1,0 +1,172 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+
+<title>RUL Estimator</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+
+
+        <form action="/predict" method="post">
+            <legend>RUL Estimation Form</legend>
+            <div class="mb-3">
+                <label class="form-label">Engine Number</label>
+                <input class="form-control" type="text" name="engineNumber" placeholder="Enter Engine Number from 1 to 100 "
+                    required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Current Cycle Number</label>
+                <input class="form-control" type="text" name="cycleNumber" placeholder="Enter a value of Current operating Cycle "
+                    required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total temperature at LPC outlet(°R )</label>
+                <input class="form-control" type="text" name="sensor2"
+                    placeholder="Enter a value of Total temperature at LPC outlet in '°R' " />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total temperature at HPC outlet(°R )</label>
+                <input class="form-control" type="text" name="sensor3" placeholder="Enter a value of Total temperature at HPC outlet in '°R' "
+                    required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total temperature at LPT outlet(°R )</label>
+                <input class="form-control" type="text" name="sensor4"
+                    placeholder="Enter a value of Total temperature at LPT outlet in °R  " required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total pressure at HPC outlet(psia)</label>
+                <input class="form-control" type="text" name="sensor7" placeholder="Enter a value of Total pressure at HPC outlet in 'psia'"
+                    required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Physical fan speed(rpm)</label>
+                <input class="form-control" type="text" name="sensor8" placeholder="Enter a value of Physical fan speed in 'rpm'"
+                    required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Physical core speed (rpm)</label>
+                <input class="form-control" type="text" name="sensor9"
+                    placeholder="Enter a value of Physical core speed in rpm" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Static pressure at HPC outlet (psia)</label>
+                <input class="form-control" type="text" name="sensor11"
+                    placeholder="Enter a value of Static pressure at HPC outlet  in 'psia' " required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Ratio of fuel flow to Ps30 (pps/psi)</label>
+                <input class="form-control" type="text" name="sensor12"
+                    placeholder="Enter a value of Ratio of fuel flow to Ps30 in 'pps/psi' " required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Corrected fan speed (rpm)</label>
+                <input class="form-control" type="text" name="sensor13"
+                    placeholder="Enter a value of Corrected fan speed  in rpm " required />
+            
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Corrected core speed(rpm)</label>
+                <input class="form-control" type="text" name="sensor14"
+                    placeholder="Enter a value of Corrected core speed in rpm " required />
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Bypass Ratio </label>
+                <input class="form-control" type="text" name="sensor15"
+                    placeholder="Enter a value of Bypass Ratio  " required />
+                
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Bleed Enthalpy </label>
+                <input class="form-control" type="text" name="sensor17"
+                    placeholder="Enter a value of Bleed Enthalpy " required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">HPT coolant bleed(lbm/s )</label>
+                <input class="form-control" type="text" name="sensor20"
+                    placeholder="Enter a value of HPT coolant bleed lbm/s " required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">LPT coolant bleed (lbm/s) </label>
+                <input class="form-control" type="text" name="sensor21"
+                    placeholder="Enter a value of LPT coolant bleed  in lbm/s " required />
+
+            </div>
+
+            
+            <div class="mb-3">
+
+                <input class="btn btn-primary" type="submit" value="Predict Remaining Usefull Life(RUL)" required />
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+              Turbofan RUL
+            </div>
+            
+            <div class="card-body">
+        {% if context['Turbofan_data'] is not none %}
+        <table class="table table-striped">
+            <caption>Turbofan RUL Prediction </caption>
+            <tr>
+                <th>Input Feature</th>
+                <th>Feature Value</th>
+
+            </tr>
+            {% for column,value in context['Turbofan_data'].items() %}
+
+
+
+            <tr>
+                <td>{{column}}</td>
+                <td>{{value[0]}}</td>
+            </tr>
+
+            {% endfor %}
+            <tr>
+
+                <td>RUL</td>
+                <td>
+                    {{ context['RUL'] }}
+                </td>
+            </tr>
+        </table>
+
+        {% else %}
+       
+              <h5 class="card-title">Submit Form</h5>
+              <p class="card-text">Kindly provide necessary information to estimate RUL of Turbofan engine</p>
+            
+         
+
+        {% endif %}
+        Go to <a href="/" class="btn btn-primary">Home</a>
+    </div>
+</div>
+    </div>
+
+    {% endblock %}

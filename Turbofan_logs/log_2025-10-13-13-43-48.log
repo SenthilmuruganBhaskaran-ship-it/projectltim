@@ -1,0 +1,12 @@
+[2025-10-13 13:43:49,587]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-13 13:43:49,587]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-13 13:43:57,600]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:43:57] "POST /predict HTTP/1.1" 200 -
+[2025-10-13 13:44:01,726]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:01] "GET / HTTP/1.1" 200 -
+[2025-10-13 13:44:01,922]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:01] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -
+[2025-10-13 13:44:12,185]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:12] "GET /artifact HTTP/1.1" 200 -
+[2025-10-13 13:44:13,573]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:13] "GET /artifact/Turbofan/artifact HTTP/1.1" 200 -
+[2025-10-13 13:44:14,584]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:14] "GET /artifact/Turbofan/artifact/data_ingestion HTTP/1.1" 200 -
+[2025-10-13 13:44:16,779]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:16] "GET /artifact/Turbofan/artifact/data_ingestion/2025-09-09-20-07-40 HTTP/1.1" 200 -
+[2025-10-13 13:44:17,960]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:17] "GET /artifact/Turbofan/artifact/data_ingestion/2025-09-09-20-07-40/ingested_data HTTP/1.1" 200 -
+[2025-10-13 13:44:36,863]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 13:44:36] "GET /saved_models HTTP/1.1" 200 -

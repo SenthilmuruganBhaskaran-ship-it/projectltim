@@ -1,0 +1,7 @@
+[2025-10-13 12:03:53,472]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-13 12:03:53,472]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-13 12:03:59,146]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 12:03:59] "POST /predict HTTP/1.1" 200 -
+[2025-10-13 12:04:06,973]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 12:04:06] "POST /predict HTTP/1.1" 200 -
+[2025-10-13 12:05:09,589]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 12:05:09] "POST /predict HTTP/1.1" 200 -
+[2025-10-13 12:05:13,631]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [13/Oct/2025 12:05:13] "POST /predict HTTP/1.1" 200 -

@@ -1,0 +1,13 @@
+[2025-10-12 19:39:53,602]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-12 19:39:53,602]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-12 19:40:00,095]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 19:40:00] "POST /predict HTTP/1.1" 200 -
+[2025-10-12 19:40:06,099]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 19:40:06] "POST /predict HTTP/1.1" 200 -
+[2025-10-12 19:40:59,787]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-12 19:40:59,787]^;INFO^;245^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-12 19:40:59,790]^;INFO^;317^;pipeline.py^;run_pipeline()^;Pipeline starting.
+[2025-10-12 19:40:59,790]^;INFO^;333^;pipeline.py^;run_pipeline()^;Pipeline experiment: Experiment(experiment_id='75d68824-aa38-4a5f-816f-2567afe90b43', initialization_timestamp='2025-10-12-19-40-59', artifact_time_stamp='2025-10-12-19-40-59', running_status=True, start_time=datetime.datetime(2025, 10, 12, 19, 40, 59, 790105), stop_time=None, execution_time=None, message='Pipeline has been started.', experiment_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\experiment\\experiment.csv', accuracy=None, is_model_accepted=None)
+[2025-10-12 19:40:59,817]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 19:40:59] "GET /train HTTP/1.1" 200 -
+[2025-10-12 19:41:12,778]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-12 19:41:12,778]^;INFO^;245^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-12 19:41:12,786]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 19:41:12] "GET /train HTTP/1.1" 200 -

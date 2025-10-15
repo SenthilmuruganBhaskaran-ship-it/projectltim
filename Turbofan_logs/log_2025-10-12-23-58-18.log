@@ -1,0 +1,15 @@
+[2025-10-12 23:58:19,258]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-12 23:58:19,258]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-12 23:58:32,944]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:32] "POST /predict HTTP/1.1" 200 -
+[2025-10-12 23:58:39,648]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:39] "GET / HTTP/1.1" 200 -
+[2025-10-12 23:58:39,870]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:39] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -
+[2025-10-12 23:58:46,554]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:46] "GET /saved_models HTTP/1.1" 200 -
+[2025-10-12 23:58:48,177]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:48] "GET /saved_models/saved_models/20221009155542 HTTP/1.1" 200 -
+[2025-10-12 23:58:50,849]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:50] "[36mGET /saved_models/saved_models/20221009155542/model.pkl HTTP/1.1[0m" 304 -
+[2025-10-12 23:58:58,228]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:58:58] "GET /saved_models HTTP/1.1" 200 -
+[2025-10-12 23:59:12,453]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:59:12] "GET /predict HTTP/1.1" 200 -
+[2025-10-12 23:59:16,160]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:59:16] "GET /artifact HTTP/1.1" 200 -
+[2025-10-12 23:59:17,759]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:59:17] "GET /artifact/Turbofan/artifact HTTP/1.1" 200 -
+[2025-10-12 23:59:18,850]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:59:18] "GET /artifact/Turbofan/artifact/data_ingestion HTTP/1.1" 200 -
+[2025-10-12 23:59:52,206]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [12/Oct/2025 23:59:52] "GET /saved_models HTTP/1.1" 200 -

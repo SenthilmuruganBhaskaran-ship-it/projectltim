@@ -1,0 +1,328 @@
+[2025-10-10 12:19:26,332]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-10 12:19:26,332]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-10 12:19:53,842]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:53,843]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-53\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-53\\ingested_data\\test')
+[2025-10-10 12:19:53,843]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:53,844]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:53,847]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:53] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:53,847]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:55,282]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:55,282]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-55\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-55\\ingested_data\\test')
+[2025-10-10 12:19:55,283]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:55,283]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:55,283]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:55] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:55,283]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:55,495]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-53\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-53\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:55,495]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:55,495]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:55,495]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-53\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-53\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:55,495]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:55,495]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:55,548]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:55,555]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:19:56,079]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,080]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,080]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,080]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,081]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,081]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:56,240]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,241]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,243]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,243]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,243]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,243]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:56,269]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-55\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-55\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:56,269]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:56,269]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:56,269]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-55\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-55\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:56,269]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:56,269]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:56,353]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:56,361]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:19:56,406]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,416]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,416]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,416]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,417]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,417]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:56,582]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,586]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,586]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,586]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,587]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,587]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:56,749]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,767]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,768]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,767]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,768]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:56,769]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,915]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:19:56,919]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test')
+[2025-10-10 12:19:56,919]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:19:56,919]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:19:56,920]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:19:56] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:19:56,920]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:19:57,295]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:57,295]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:57,295]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:57,295]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:57,295]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:57,296]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:57,346]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:57,346]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:57,346]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:57,348]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:57,348]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:57,348]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:57,672]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:19:57,743]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:19:58,036]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:58,036]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:58,036]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:58,036]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:58,036]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:58,036]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:58,183]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:58,196]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:19:58,198]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:58,198]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:58,198]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:58,198]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:58,198]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:58,200]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:58,200]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:58,200]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:58,201]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:58,202]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:58,203]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:58,203]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:58,376]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:58,387]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:19:58,398]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:58,412]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:19:58,438]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-19-56\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:19:58,438]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:19:58,438]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:19:58,438]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-19-56\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:19:58,438]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:19:58,438]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:19:58,745]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:19:58,772]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:20:13,726]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:20:13] "GET / HTTP/1.1" 200 -
+[2025-10-10 12:20:17,919]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:20:17] "GET /predict HTTP/1.1" 200 -
+[2025-10-10 12:20:22,189]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:20:22] "POST /predict HTTP/1.1" 200 -
+[2025-10-10 12:20:26,919]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:20:26,933]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-26\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-26\\ingested_data\\test')
+[2025-10-10 12:20:26,933]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:20:26,933]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:20:26,935]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:20:26] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:20:26,935]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:20:27,886]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-26\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-26\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:20:27,888]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:20:27,888]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:20:27,888]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-20-26\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-20-26\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:20:27,888]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:20:27,888]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:20:28,110]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:20:28,144]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:20:31,938]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-10 12:20:31,955]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-31\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-31\\ingested_data\\test')
+[2025-10-10 12:20:31,955]^;ERROR^;1741^;app.py^;log_exception()^;Exception on /train [GET]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 95, in train
+    "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+AttributeError: 'Pipeline' object has no attribute 'get_experiments_status'
+[2025-10-10 12:20:31,955]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-10 12:20:31,957]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-10 12:20:31,957]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [10/Oct/2025 12:20:31] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2025-10-10 12:20:33,105]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-31\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-10-12-20-31\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-10 12:20:33,107]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-10 12:20:33,107]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-10 12:20:33,114]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-20-31\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-10-12-20-31\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-10 12:20:33,114]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-10 12:20:33,114]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-10 12:20:33,382]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-10 12:20:33,405]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-10 12:24:08,196]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:08,332]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:08,334]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:08,376]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:08,380]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-53\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-53\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-53\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:08,382]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:08,382]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:08,382]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-10 12:24:10,124]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:10,261]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:10,264]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:10,380]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:10,383]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-55\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-55\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-55\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:10,386]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:10,386]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:10,386]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-10 12:24:12,290]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:12,382]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:12,474]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:12,517]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:12,525]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:12,530]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:12,532]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:12,532]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:12,532]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-10 12:24:12,619]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:12,620]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:12,665]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:12,668]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:12,671]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:12,671]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:12,671]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-10 12:24:12,761]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:12,879]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:12,881]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:12,888]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:12,890]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:12,894]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:12,894]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:12,894]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-10 12:24:13,670]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-10 12:24:13,761]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-10 12:24:13,765]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-10 12:24:13,771]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-10 12:24:13,774]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-10-12-19-56\\preprocessed\\preprocced.pkl')
+[2025-10-10 12:24:13,776]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-10 12:24:13,778]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-10 12:24:13,778]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously

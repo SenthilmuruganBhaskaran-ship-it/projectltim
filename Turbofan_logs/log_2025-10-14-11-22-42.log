@@ -1,0 +1,21 @@
+[2025-10-14 11:22:42,672]^;INFO^;224^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-14 11:22:42,672]^;INFO^;224^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-14 11:22:43,541]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:22:43] "GET / HTTP/1.1" 200 -
+[2025-10-14 11:22:43,722]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:22:43] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -
+[2025-10-14 11:36:20,847]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:36:20] "GET /predict HTTP/1.1" 200 -
+[2025-10-14 11:36:27,000]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:36:27] "POST /predict HTTP/1.1" 200 -
+[2025-10-14 11:36:30,883]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:36:30] "GET /predict HTTP/1.1" 200 -
+[2025-10-14 11:36:33,593]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:36:33] "GET /saved_models HTTP/1.1" 200 -
+[2025-10-14 11:36:35,281]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 11:36:35] "GET /saved_models/saved_models/20250909213626 HTTP/1.1" 200 -
+[2025-10-14 12:38:05,158]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:05] "GET /predict HTTP/1.1" 200 -
+[2025-10-14 12:38:14,602]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:14] "POST /predict HTTP/1.1" 200 -
+[2025-10-14 12:38:25,167]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:25] "GET / HTTP/1.1" 200 -
+[2025-10-14 12:38:25,221]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:25] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -
+[2025-10-14 12:38:27,767]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:27] "GET /artifact HTTP/1.1" 200 -
+[2025-10-14 12:38:29,313]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:29] "GET /artifact/Turbofan/artifact HTTP/1.1" 200 -
+[2025-10-14 12:38:32,644]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:32] "GET /artifact/Turbofan/artifact/data_ingestion HTTP/1.1" 200 -
+[2025-10-14 12:38:35,595]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:35] "GET /artifact/Turbofan/artifact/data_ingestion/2025-09-09-20-07-40 HTTP/1.1" 200 -
+[2025-10-14 12:38:38,083]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:38] "GET /saved_models HTTP/1.1" 200 -
+[2025-10-14 12:38:56,258]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:56] "GET / HTTP/1.1" 200 -
+[2025-10-14 12:38:56,327]^;INFO^;224^;_internal.py^;_log()^;127.0.0.1 - - [14/Oct/2025 12:38:56] "[36mGET /static/engine_diagram.jpg HTTP/1.1[0m" 304 -

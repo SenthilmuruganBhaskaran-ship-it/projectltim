@@ -1,0 +1,13 @@
+numpy
+Flask
+gunicorn
+scikit-learn
+pandas
+PyYAML
+dill
+matplotlib
+six
+scipy
+xgboost
+
+-e .

@@ -1,0 +1,161 @@
+[2025-10-09 11:59:01,090]^;INFO^;97^;_internal.py^;_log()^;[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-09 11:59:01,091]^;INFO^;97^;_internal.py^;_log()^;[33mPress CTRL+C to quit[0m
+[2025-10-09 11:59:20,520]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 11:59:20] "GET / HTTP/1.1" 200 -
+[2025-10-09 11:59:26,668]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 11:59:26] "GET /predict HTTP/1.1" 200 -
+[2025-10-09 11:59:38,165]^;ERROR^;875^;app.py^;log_exception()^;Exception on /predict [POST]
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 107, in predict
+    RUL = model.predict(X)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\component\model_trainer.py", line 21, in predict
+    transform_features = self.preproccing_obj.transform(x)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\pipeline.py", line 1093, in transform
+    Xt = transform.transform(Xt, **routed_params[name].transform)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\preprocessing\_data.py", line 1075, in transform
+    X = validate_data(
+        self,
+    ...<6 lines>...
+        ensure_all_finite="allow-nan",
+    )
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\validation.py", line 2929, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\sklearn\utils\validation.py", line 2787, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\app.py", line 147, in predict
+    RUL = Turbofan_predictor.predict(X=Turbofan_df)
+  File "C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\entity\Turbofan_predictor.py", line 110, in predict
+    raise TurboException(e, sys) from e
+Turbofan.exception.TurboException: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Bleed Enthalpy
+- Bypass Ratio
+- Corrected core speed(rpm)
+- Corrected fan speed (rpm)
+- Current Cycle 
+- ...
+Feature names seen at fit time, yet now missing:
+- cycleNumber
+- engineNumber
+- sensor11
+- sensor12
+- sensor13
+- ...
+
+[2025-10-09 11:59:38,174]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 11:59:38] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2025-10-09 11:59:50,440]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-09 11:59:50,440]^;INFO^;36^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-09 11:59:50,441]^;INFO^;108^;pipeline.py^;run_pipeline()^;Pipeline starting.
+[2025-10-09 11:59:50,442]^;INFO^;124^;pipeline.py^;run_pipeline()^;Pipeline experiment: Experiment(experiment_id='09cad5d1-16e8-4271-8c7a-b8e8b95276fd', initialization_timestamp='2025-10-09-11-59-50', artifact_time_stamp='2025-10-09-11-59-50', running_status=True, start_time=datetime.datetime(2025, 10, 9, 11, 59, 50, 442385), stop_time=None, execution_time=None, message='Pipeline has been started.', experiment_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\experiment\\experiment.csv', accuracy=None, is_model_accepted=None)
+[2025-10-09 11:59:50,451]^;INFO^;46^;configuration.py^;get_data_ingestion_config()^;data_ingestion_configDataIngestionConfig(download_url_train='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/train_FD001.csv', download_url_test='https://raw.githubusercontent.com/Vinayakmane47/NASA-turbofan-ML-Project/main/Proccessed_data/test_FD001.csv', ingested_train_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-09-11-59-50\\ingested_data\\train', ingested_test_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-09-11-59-50\\ingested_data\\test')
+[2025-10-09 11:59:50,451]^;INFO^;15^;data_ingestion.py^;__init__()^;========================================Data Ingestion started========================================
+[2025-10-09 11:59:50,451]^;INFO^;23^;data_ingestion.py^;download_turbofan_data()^;Downloading Turbofan Dataset 
+[2025-10-09 11:59:50,459]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 11:59:50] "GET /train HTTP/1.1" 200 -
+[2025-10-09 11:59:53,433]^;INFO^;45^;data_ingestion.py^;download_turbofan_data()^;Data Ingestion artifact info DataIngestionArtifact(train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-09-11-59-50\\ingested_data\\train\\train_FD001.csv', test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_ingestion\\2025-10-09-11-59-50\\ingested_data\\test\\test_FD001.csv', is_ingested=True, message='Data Ingestion Succesfull Completed')
+[2025-10-09 11:59:53,434]^;INFO^;20^;data_validation.py^;__init__()^;======================================== Data Validation Started ========================================
+[2025-10-09 11:59:53,434]^;INFO^;38^;data_validation.py^;is_train_test_file_exists()^;Checking training and test file exists or not 
+[2025-10-09 11:59:53,434]^;INFO^;108^;data_validation.py^;initiate_data_validation()^;Data Validation artifact DataValidationArtifact(schema_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\config\\schema.yaml', report_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-09-11-59-50\\report.json', report_page_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_validation\\2025-10-09-11-59-50\\report.html', is_validated=True, message='Data Validation succesfull')
+[2025-10-09 11:59:53,434]^;INFO^;45^;data_transformation.py^;__init__()^;======================================== Data Transformation Started ========================================
+[2025-10-09 11:59:53,434]^;INFO^;90^;data_transformation.py^;initiate_data_transformation()^;Loading dataset as train and test dataframe
+[2025-10-09 11:59:53,488]^;INFO^;98^;data_transformation.py^;initiate_data_transformation()^;splitting training and test dataset into x and y features i.e. dependent and independent
+[2025-10-09 11:59:53,489]^;INFO^;105^;data_transformation.py^;initiate_data_transformation()^;performing Data Transformation 
+[2025-10-09 12:01:20,219]^;INFO^;71^;data_transformation.py^;get_transformation_obj()^;Getting Transformation Obj
+[2025-10-09 12:01:20,315]^;INFO^;142^;data_transformation.py^;initiate_data_transformation()^;concating x and y arrays
+[2025-10-09 12:01:20,318]^;INFO^;156^;data_transformation.py^;initiate_data_transformation()^;saving transformed train and test files
+[2025-10-09 12:01:20,332]^;INFO^;162^;data_transformation.py^;initiate_data_transformation()^;Saving preprocessing object.
+[2025-10-09 12:01:20,336]^;INFO^;172^;data_transformation.py^;initiate_data_transformation()^;Data transformationa artifact: DataTransformationArtifact(is_transformed=True, message='Data transformation successfull.', transformed_train_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-09-11-59-50\\train\\train_FD001.npz', transformed_test_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-09-11-59-50\\test\\test_FD001.npz', preprocessed_object_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\data_transformation\\2025-10-09-11-59-50\\preprocessed\\preprocced.pkl')
+[2025-10-09 12:01:20,345]^;INFO^;179^;data_transformation.py^;__del__()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Transformation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2025-10-09 12:01:20,345]^;INFO^;38^;model_trainer.py^;__init__()^;======================================== Model Trainer Started ========================================
+[2025-10-09 12:01:20,345]^;INFO^;48^;model_trainer.py^;initiate_model_trainer()^;Loading train and test dataset which are transformed previously
+[2025-10-09 12:01:20,350]^;INFO^;56^;model_trainer.py^;initiate_model_trainer()^;Splitting train and test arrays 
+[2025-10-09 12:01:20,350]^;INFO^;62^;model_trainer.py^;initiate_model_trainer()^;Extracting Model config File path 
+[2025-10-09 12:01:20,350]^;INFO^;65^;model_trainer.py^;initiate_model_trainer()^;getting model factory object using model config path C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\config\model.yaml
+[2025-10-09 12:01:20,354]^;INFO^;70^;model_trainer.py^;initiate_model_trainer()^;Our Expected Accuracy is 0.5
+[2025-10-09 12:01:20,354]^;INFO^;72^;model_trainer.py^;initiate_model_trainer()^;Getting Best Model on by doing grid search on train dataset 
+[2025-10-09 12:01:20,354]^;INFO^;358^;model_factory.py^;get_best_model()^;Started Initializing model from config file
+[2025-10-09 12:01:20,354]^;INFO^;203^;model_factory.py^;class_for_name()^;Executing command: from <module 'sklearn.linear_model' from 'C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\venv\\Lib\\site-packages\\sklearn\\linear_model\\__init__.py'> import LinearRegression
+[2025-10-09 12:01:20,363]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ LinearRegression().fit_intercept=True
+[2025-10-09 12:01:20,363]^;INFO^;203^;model_factory.py^;class_for_name()^;Executing command: from <module 'sklearn.svm' from 'C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\venv\\Lib\\site-packages\\sklearn\\svm\\__init__.py'> import SVR
+[2025-10-09 12:01:20,363]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ SVR().kernel=linear
+[2025-10-09 12:01:20,364]^;INFO^;360^;model_factory.py^;get_best_model()^;Initialized model: [InitializedModelDetail(model_serial_number='module_0', model=LinearRegression(), param_grid_search={'fit_intercept': [True, False]}, model_name='sklearn.linear_model.LinearRegression'), InitializedModelDetail(model_serial_number='module_1', model=SVR(kernel='linear'), param_grid_search={'kernel': ['linear', 'poly'], 'degree': [2, 3]}, model_name='sklearn.svm.SVR')]
+[2025-10-09 12:01:20,364]^;INFO^;203^;model_factory.py^;class_for_name()^;Executing command: from <module 'sklearn.model_selection' from 'C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\venv\\Lib\\site-packages\\sklearn\\model_selection\\__init__.py'> import GridSearchCV
+[2025-10-09 12:01:20,365]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ GridSearchCV(estimator=LinearRegression(),
+             param_grid={'fit_intercept': [True, False]}).cv=5
+[2025-10-09 12:01:20,366]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ GridSearchCV(cv=5, estimator=LinearRegression(),
+             param_grid={'fit_intercept': [True, False]}).verbose=2
+[2025-10-09 12:01:20,366]^;INFO^;236^;model_factory.py^;execute_grid_search_operation()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> f"Training LinearRegression Started." <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:01:20,827]^;INFO^;203^;model_factory.py^;class_for_name()^;Executing command: from <module 'sklearn.model_selection' from 'C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\venv\\Lib\\site-packages\\sklearn\\model_selection\\__init__.py'> import GridSearchCV
+[2025-10-09 12:01:20,829]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ GridSearchCV(estimator=SVR(kernel='linear'),
+             param_grid={'degree': [2, 3], 'kernel': ['linear', 'poly']}).cv=5
+[2025-10-09 12:01:20,830]^;INFO^;182^;model_factory.py^;update_property_of_class()^;Executing:$ GridSearchCV(cv=5, estimator=SVR(kernel='linear'),
+             param_grid={'degree': [2, 3], 'kernel': ['linear', 'poly']}).verbose=2
+[2025-10-09 12:01:20,830]^;INFO^;236^;model_factory.py^;execute_grid_search_operation()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> f"Training SVR Started." <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:07:53,746]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-09 12:07:53,746]^;INFO^;36^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-09 12:07:53,754]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 12:07:53] "GET /train HTTP/1.1" 200 -
+[2025-10-09 12:08:28,576]^;INFO^;345^;model_factory.py^;get_best_model_from_grid_searched_best_model_list()^;Acceptable model found:GridSearchedBestModel(model_serial_number='module_0', model=LinearRegression(), best_model=LinearRegression(), best_parameters={'fit_intercept': True}, best_score=np.float64(0.7130638479174596))
+[2025-10-09 12:08:28,576]^;INFO^;345^;model_factory.py^;get_best_model_from_grid_searched_best_model_list()^;Acceptable model found:GridSearchedBestModel(model_serial_number='module_1', model=SVR(kernel='linear'), best_model=SVR(degree=2, kernel='linear'), best_parameters={'degree': 2, 'kernel': 'linear'}, best_score=np.float64(0.7217797279162207))
+[2025-10-09 12:08:28,577]^;INFO^;351^;model_factory.py^;get_best_model_from_grid_searched_best_model_list()^;Best model: GridSearchedBestModel(model_serial_number='module_1', model=SVR(kernel='linear'), best_model=SVR(degree=2, kernel='linear'), best_parameters={'degree': 2, 'kernel': 'linear'}, best_score=np.float64(0.7217797279162207))
+[2025-10-09 12:08:28,577]^;INFO^;76^;model_trainer.py^;initiate_model_trainer()^;Best Model Found on Training Dataset GridSearchedBestModel(model_serial_number='module_1', model=SVR(kernel='linear'), best_model=SVR(degree=2, kernel='linear'), best_parameters={'degree': 2, 'kernel': 'linear'}, best_score=np.float64(0.7217797279162207))
+[2025-10-09 12:08:28,577]^;INFO^;78^;model_trainer.py^;initiate_model_trainer()^;Getting list of trained models on train dataset previously by grid search
+[2025-10-09 12:08:28,577]^;INFO^;84^;model_trainer.py^;initiate_model_trainer()^;Evaluating all grid searched models on train and test dataset
+[2025-10-09 12:08:28,578]^;INFO^;71^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Started evaluating model: [LinearRegression] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:28,581]^;INFO^;90^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Score <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:28,582]^;INFO^;91^;model_factory.py^;evaluate_regression_model()^;Train Score		 Test Score		 Average Score
+[2025-10-09 12:08:28,582]^;INFO^;92^;model_factory.py^;evaluate_regression_model()^;0.7286708581474058		 0.5783834423087402		0.6448869937511837
+[2025-10-09 12:08:28,582]^;INFO^;94^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Loss <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:28,582]^;INFO^;95^;model_factory.py^;evaluate_regression_model()^;Diff test train accuracy: [0.15028741583866567].
+[2025-10-09 12:08:28,582]^;INFO^;96^;model_factory.py^;evaluate_regression_model()^;Train root mean squared error: [35.87873121654437].
+[2025-10-09 12:08:28,582]^;INFO^;97^;model_factory.py^;evaluate_regression_model()^;Test root mean squared error: [26.98289859028645].
+[2025-10-09 12:08:28,582]^;INFO^;113^;model_factory.py^;evaluate_regression_model()^;Acceptable model found MetricInfoArtifact(model_name='LinearRegression()', model_object=LinearRegression(), train_rmse=np.float64(35.87873121654437), test_rmse=np.float64(26.98289859028645), train_accuracy=0.7286708581474058, test_accuracy=0.5783834423087402, model_accuracy=0.6448869937511837, index_number=0). 
+[2025-10-09 12:08:28,582]^;INFO^;71^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Started evaluating model: [SVR] <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:35,908]^;INFO^;163^;configuration.py^;get_training_pipeline_config()^;Training Pipeline Config TrainingPipelineConfig(artifact_dir='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact')
+[2025-10-09 12:08:35,908]^;INFO^;36^;pipeline.py^;__init__()^;Initializing pipeline
+[2025-10-09 12:08:35,916]^;INFO^;97^;_internal.py^;_log()^;127.0.0.1 - - [09/Oct/2025 12:08:35] "GET /train HTTP/1.1" 200 -
+[2025-10-09 12:08:40,207]^;INFO^;90^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Score <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:40,207]^;INFO^;91^;model_factory.py^;evaluate_regression_model()^;Train Score		 Test Score		 Average Score
+[2025-10-09 12:08:40,207]^;INFO^;92^;model_factory.py^;evaluate_regression_model()^;0.7168600100652124		 0.6393687170070375		0.6759005406093718
+[2025-10-09 12:08:40,207]^;INFO^;94^;model_factory.py^;evaluate_regression_model()^;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Loss <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2025-10-09 12:08:40,208]^;INFO^;95^;model_factory.py^;evaluate_regression_model()^;Diff test train accuracy: [0.07749129305817493].
+[2025-10-09 12:08:40,208]^;INFO^;96^;model_factory.py^;evaluate_regression_model()^;Train root mean squared error: [36.65130664472524].
+[2025-10-09 12:08:40,208]^;INFO^;97^;model_factory.py^;evaluate_regression_model()^;Test root mean squared error: [24.955223890190684].
+[2025-10-09 12:08:40,208]^;INFO^;113^;model_factory.py^;evaluate_regression_model()^;Acceptable model found MetricInfoArtifact(model_name="SVR(degree=2, kernel='linear')", model_object=SVR(degree=2, kernel='linear'), train_rmse=np.float64(36.65130664472524), test_rmse=np.float64(24.955223890190684), train_accuracy=0.7168600100652124, test_accuracy=0.6393687170070375, model_accuracy=0.6759005406093718, index_number=1). 
+[2025-10-09 12:08:40,208]^;INFO^;95^;model_trainer.py^;initiate_model_trainer()^;Saving Turbofan Model at path : C:\Users\T8674\Desktop\NASA-turbofan-ML-Project-AIOPS\Turbofan\artifact\model_trainer\2025-10-09-11-59-50\trained_model\model.pkl
+[2025-10-09 12:08:40,218]^;INFO^;108^;model_trainer.py^;initiate_model_trainer()^;Model Trainer Artifact ModelTrainerArtifact(is_trained=True, message='Model Trained Succesfully ', trained_model_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\model_trainer\\2025-10-09-11-59-50\\trained_model\\model.pkl', train_rmse=np.float64(36.65130664472524), test_rmse=np.float64(24.955223890190684), train_accuracy=0.7168600100652124, test_accuracy=0.6393687170070375, model_accuracy=0.6759005406093718)
+[2025-10-09 12:08:40,219]^;INFO^;136^;configuration.py^;get_model_evaluation_config()^;Model Evaluation Config: ModelEvaluationConfig(model_evaluation_file_path='C:\\Users\\T8674\\Desktop\\NASA-turbofan-ML-Project-AIOPS\\Turbofan\\artifact\\model_evaluation\\model_evaluation.yaml', time_stamp='2025-10-09-11-59-50').
+[2025-10-09 12:08:40,219]^;INFO^;24^;model_evaluation.py^;__init__()^;Data Evaluation is started 
+[2025-10-09 12:08:40,219]^;INFO^;96^;model_evaluation.py^;initiate_model_evaluation()^;Initiating ModelEvaluation 
+[2025-10-09 12:08:40,284]^;INFO^;168^;model_evaluation.py^;__del__()^;====================Model Evaluation log completed.==================== 
